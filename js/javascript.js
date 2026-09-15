@@ -62,3 +62,24 @@ scrollTopButton.addEventListener("click", () => {
     });
 
 });
+
+// =========================================
+// Active Navigation Link
+// =========================================
+
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+navigationLinks.forEach((link) => {
+
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+
+        link.classList.add("active");
+
+        link.setAttribute("aria-current", "page");
+
+    }
+
+});
+

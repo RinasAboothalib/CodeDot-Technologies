@@ -1,6 +1,9 @@
 /* ========================================
    CSS RESET
 ======================================== */
+html {
+    scroll-behavior: smooth;
+}
 
 * {
     margin: 0;
@@ -1481,4 +1484,13 @@ button {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}
+
+/* =========================================
+   Active Navigation Link
+   ========================================= */
+
+.nav-links a.active {
+    color: var(--color-primary);
+    font-weight: 600;
 }
