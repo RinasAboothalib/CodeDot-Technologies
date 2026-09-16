@@ -120,3 +120,41 @@ revealElements.forEach((element) => {
     revealObserver.observe(element);
 
 });
+
+// =========================================
+// Portfolio Filtering
+// =========================================
+
+const filterButtons = document.querySelectorAll(".filter-button");
+const projectCards = document.querySelectorAll(".project-card");
+
+filterButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const selectedFilter = button.getAttribute("data-filter");
+
+        filterButtons.forEach((filterButton) => {
+            filterButton.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        projectCards.forEach((card) => {
+
+            const cardCategory = card.getAttribute("data-category");
+
+            if (
+                selectedFilter === "all" ||
+                cardCategory === selectedFilter
+            ) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+
+});
