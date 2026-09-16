@@ -84,29 +84,39 @@ navigationLinks.forEach((link) => {
 });
 
 
-/* =========================================
-   Scroll Reveal Animation
-   ========================================= */
+// =========================================
+// Scroll Reveal Animation
+// =========================================
 
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
-}
+const revealElements = document.querySelectorAll(
+    ".services-preview, .about-preview, .why-choose-us, .portfolio-preview, .final-cta"
+);
 
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
 
-@media (prefers-reduced-motion: reduce) {
+        entries.forEach((entry) => {
 
-    .reveal {
-        opacity: 1;
-        transform: none;
-        transition: none;
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
     }
+);
 
-}
+revealElements.forEach((element) => {
+
+    element.classList.add("reveal");
+
+    revealObserver.observe(element);
+
+});
