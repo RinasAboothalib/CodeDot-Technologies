@@ -1,6 +1,7 @@
 /* ========================================
    CSS RESET
 ======================================== */
+
 html {
     scroll-behavior: smooth;
 }
@@ -102,6 +103,7 @@ select {
     font: inherit;
 }
 
+
 /* ========================================
    CONTAINER
 ======================================== */
@@ -111,6 +113,7 @@ select {
     margin: 0 auto;
 }
 
+
 /* ========================================
    HEADER
 ======================================== */
@@ -118,6 +121,7 @@ select {
 header {
     background-color: var(--color-background);
     border-bottom: 1px solid var(--color-border);
+
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -131,32 +135,40 @@ header {
 nav {
     width: min(90%, 1200px);
     min-height: 80px;
+
     margin: 0 auto;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 30px;
 }
 
 
-/* ================================
-   Company Logo
-================================ */
+/* ========================================
+   COMPANY LOGO
+======================================== */
 
 .logo {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+
+    width: 180px;
+    height: 70px;
+
     flex-shrink: 0;
-    text-decoration: none;
 }
 
 .logo img {
     display: block;
-    width: 150px;
-    height: auto;
-    max-height: 60px;
+
+    width: 170px;
+    height: 60px;
+
     object-fit: contain;
+    object-position: left center;
 }
 
 
@@ -167,6 +179,7 @@ nav {
 .nav-links {
     display: flex;
     align-items: center;
+
     gap: 28px;
 
     list-style: none;
@@ -175,6 +188,7 @@ nav {
 
 .nav-links a {
     color: var(--color-text);
+
     font-size: 0.95rem;
     font-weight: 500;
 
@@ -197,11 +211,14 @@ nav {
 
     border: none;
     background: transparent;
+
     color: var(--color-heading);
 
     font-size: 1.6rem;
+
     cursor: pointer;
 }
+
 
 /* ========================================
    HERO SECTION
@@ -210,11 +227,14 @@ nav {
 .hero {
     width: min(90%, 1200px);
     min-height: 650px;
+
     margin: 0 auto;
 
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
+
     align-items: center;
+
     gap: 70px;
 
     padding: 80px 0;
@@ -236,8 +256,10 @@ nav {
     margin-bottom: 20px;
 
     color: var(--color-primary);
+
     font-size: 0.8rem;
     font-weight: 700;
+
     letter-spacing: 1.5px;
 }
 
@@ -251,6 +273,7 @@ nav {
 
     font-size: clamp(2.5rem, 5vw, 4.5rem);
     font-weight: 700;
+
     letter-spacing: -1.5px;
 }
 
@@ -261,9 +284,11 @@ nav {
 
 .hero-content > p {
     max-width: 580px;
+
     margin-bottom: 32px;
 
     color: var(--color-text);
+
     font-size: 1.1rem;
 }
 
@@ -275,7 +300,9 @@ nav {
 .hero-buttons {
     display: flex;
     align-items: center;
+
     gap: 16px;
+
     flex-wrap: wrap;
 }
 
@@ -286,10 +313,12 @@ nav {
 
 .btn {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
     min-height: 50px;
+
     padding: 0 24px;
 
     border-radius: 8px;
@@ -317,6 +346,7 @@ nav {
 
 .btn-primary:hover {
     background-color: var(--color-primary-dark);
+
     transform: translateY(-2px);
 }
 
@@ -327,6 +357,7 @@ nav {
 
 .btn-secondary {
     background-color: transparent;
+
     color: var(--color-heading);
 
     border: 1px solid var(--color-border);
@@ -335,6 +366,7 @@ nav {
 
 .btn-secondary:hover {
     color: var(--color-primary);
+
     border-color: var(--color-primary);
 
     transform: translateY(-2px);
@@ -347,7 +379,9 @@ nav {
 
 .hero-image {
     width: 100%;
+
     overflow: hidden;
+
     border-radius: 20px;
 }
 
@@ -368,12 +402,14 @@ nav {
     transform: scale(1.03);
 }
 
+
 /* ========================================
    SERVICES PREVIEW
 ======================================== */
 
 .services-preview {
     padding: 100px 0;
+
     background-color: var(--color-section);
 }
 
@@ -384,6 +420,7 @@ nav {
 
 .section-heading {
     max-width: 700px;
+
     margin: 0 auto 55px;
 
     text-align: center;
@@ -396,8 +433,10 @@ nav {
     margin-bottom: 14px;
 
     color: var(--color-primary);
+
     font-size: 0.8rem;
     font-weight: 700;
+
     letter-spacing: 1.5px;
 }
 
@@ -412,6 +451,7 @@ nav {
 
 .section-heading p {
     color: var(--color-text);
+
     font-size: 1rem;
 }
 
@@ -422,10 +462,13 @@ nav {
 
 .services-grid {
     width: min(90%, 1200px);
+
     margin: 0 auto;
 
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 24px;
 }
 
@@ -438,7 +481,9 @@ nav {
     padding: 32px;
 
     background-color: var(--color-background);
+
     border: 1px solid var(--color-border);
+
     border-radius: 14px;
 
     transition:
@@ -473,6 +518,7 @@ nav {
     margin-bottom: 22px;
 
     color: var(--color-text);
+
     font-size: 0.95rem;
 }
 
@@ -491,19 +537,24 @@ nav {
     color: var(--color-primary-dark);
 }
 
+
 /* ========================================
    ABOUT PREVIEW
 ======================================== */
 
 .about-preview {
     width: min(90%, 1200px);
+
     margin: 0 auto;
 
     padding: 100px 0;
 
     display: grid;
+
     grid-template-columns: 0.9fr 1.1fr;
+
     align-items: center;
+
     gap: 80px;
 }
 
@@ -514,6 +565,7 @@ nav {
 
 .about-image {
     overflow: hidden;
+
     border-radius: 20px;
 }
 
@@ -523,6 +575,7 @@ nav {
     height: 520px;
 
     object-fit: cover;
+
     border-radius: 20px;
 
     transition: transform 0.5s ease;
@@ -579,9 +632,11 @@ nav {
     position: relative;
 
     margin-bottom: 12px;
+
     padding-left: 28px;
 
     color: var(--color-heading);
+
     font-weight: 500;
 }
 
@@ -590,12 +645,15 @@ nav {
     content: "✓";
 
     position: absolute;
+
     left: 0;
     top: 0;
 
     color: var(--color-primary);
+
     font-weight: 700;
 }
+
 
 /* ========================================
    WHY CHOOSE US
@@ -603,6 +661,7 @@ nav {
 
 .why-choose-us {
     padding: 100px 0;
+
     background-color: var(--color-section);
 }
 
@@ -613,10 +672,13 @@ nav {
 
 .features-grid {
     width: min(90%, 1200px);
+
     margin: 0 auto;
 
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 24px;
 }
 
@@ -629,7 +691,9 @@ nav {
     padding: 32px;
 
     background-color: var(--color-background);
+
     border: 1px solid var(--color-border);
+
     border-radius: 14px;
 
     transition:
@@ -656,13 +720,16 @@ nav {
 .feature-icon {
     width: 48px;
     height: 48px;
+
     margin-bottom: 22px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     background-color: #eff6ff;
+
     color: var(--color-primary);
 
     border-radius: 12px;
@@ -685,8 +752,10 @@ nav {
 
 .feature-card p {
     color: var(--color-text);
+
     font-size: 0.95rem;
 }
+
 
 /* ========================================
    PORTFOLIO PREVIEW
@@ -703,10 +772,13 @@ nav {
 
 .portfolio-grid {
     width: min(90%, 1200px);
+
     margin: 0 auto;
 
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 24px;
 }
 
@@ -719,7 +791,9 @@ nav {
     overflow: hidden;
 
     background-color: var(--color-background);
+
     border: 1px solid var(--color-border);
+
     border-radius: 14px;
 
     transition:
@@ -778,7 +852,9 @@ nav {
 
     font-size: 0.78rem;
     font-weight: 700;
+
     letter-spacing: 0.8px;
+
     text-transform: uppercase;
 }
 
@@ -794,6 +870,7 @@ nav {
     margin-bottom: 20px;
 
     color: var(--color-text);
+
     font-size: 0.95rem;
 }
 
@@ -821,8 +898,10 @@ nav {
     margin-top: 50px;
 
     display: flex;
+
     justify-content: center;
 }
+
 
 /* ========================================
    FINAL CTA
@@ -832,6 +911,7 @@ nav {
     padding: 100px 20px;
 
     background-color: var(--color-heading);
+
     color: #ffffff;
 
     text-align: center;
@@ -844,6 +924,7 @@ nav {
 
 .cta-content {
     width: min(100%, 800px);
+
     margin: 0 auto;
 }
 
@@ -864,9 +945,11 @@ nav {
 
 .final-cta p {
     max-width: 650px;
+
     margin: 0 auto 32px;
 
     color: #cbd5e1;
+
     font-size: 1rem;
 }
 
@@ -877,8 +960,10 @@ nav {
 
 .cta-buttons {
     display: flex;
+
     justify-content: center;
     align-items: center;
+
     gap: 16px;
 
     flex-wrap: wrap;
@@ -891,15 +976,19 @@ nav {
 
 .final-cta .btn-secondary {
     color: #ffffff;
+
     border-color: #475569;
 }
 
 
 .final-cta .btn-secondary:hover {
     color: #ffffff;
+
     border-color: #60a5fa;
+
     background-color: rgba(255, 255, 255, 0.05);
 }
+
 
 /* ========================================
    FOOTER
@@ -909,6 +998,7 @@ footer {
     padding: 28px 20px;
 
     background-color: #020617;
+
     color: #94a3b8;
 
     text-align: center;
@@ -920,6 +1010,7 @@ footer {
 footer p {
     font-size: 0.9rem;
 }
+
 
 /* ========================================
    GLOBAL POLISH
@@ -940,6 +1031,7 @@ input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
     outline: 3px solid rgba(37, 99, 235, 0.4);
+
     outline-offset: 4px;
 }
 
@@ -950,6 +1042,7 @@ select:focus-visible {
 
 ::selection {
     background-color: var(--color-primary);
+
     color: #ffffff;
 }
 
@@ -984,6 +1077,7 @@ button {
 
 }
 
+
 /* ========================================
    TABLET RESPONSIVE DESIGN
    768px - 1024px
@@ -997,6 +1091,7 @@ button {
 
     .hero {
         gap: 40px;
+
         padding: 70px 0;
     }
 
@@ -1015,6 +1110,7 @@ button {
 
     .about-preview {
         gap: 50px;
+
         padding: 80px 0;
     }
 
@@ -1072,6 +1168,7 @@ button {
 
 }
 
+
 /* ========================================
    TABLET GRID ADJUSTMENTS
    768px - 900px
@@ -1121,19 +1218,44 @@ button {
 
     nav {
         min-height: 70px;
+
         position: relative;
     }
 
-        .portfolio-filters {
+
+    /* ====================================
+       MOBILE LOGO
+    ==================================== */
+
+    .logo {
+        width: 140px;
+        height: 60px;
+    }
+
+    .logo img {
+        width: 135px;
+        height: 50px;
+    }
+
+
+    /* ====================================
+       PORTFOLIO FILTERS
+    ==================================== */
+
+    .portfolio-filters {
         width: 90%;
+
         gap: 8px;
+
         margin-bottom: 30px;
     }
 
     .filter-button {
         padding: 9px 14px;
+
         font-size: 0.85rem;
     }
+
 
     /* ====================================
        MENU BUTTON
@@ -1148,15 +1270,18 @@ button {
        NAVIGATION LINKS
     ==================================== */
 
-    .nav-links{
+    .nav-links {
         display: none;
 
         position: absolute;
+
         top: 70px;
+
         left: 0;
         right: 0;
 
         flex-direction: column;
+
         align-items: stretch;
 
         gap: 0;
@@ -1164,11 +1289,15 @@ button {
         padding: 10px 0;
 
         background-color: var(--color-background);
+
         border-top: 1px solid var(--color-border);
+
         border-bottom: 1px solid var(--color-border);
 
-        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+        box-shadow:
+            0 10px 25px rgba(15, 23, 42, 0.08);
     }
+
 
     .nav-links.active {
         display: flex;
@@ -1176,7 +1305,7 @@ button {
 
 
     /* ====================================
-       NAVIGATION LINKS
+       NAVIGATION LIST ITEMS
     ==================================== */
 
     .nav-links li {
@@ -1198,6 +1327,7 @@ button {
     }
 
 }
+
 
 /* ========================================
    MOBILE LAYOUT
@@ -1223,9 +1353,11 @@ button {
 
     .hero {
         width: 90%;
+
         min-height: auto;
 
         grid-template-columns: 1fr;
+
         gap: 40px;
 
         padding: 60px 0;
@@ -1234,6 +1366,7 @@ button {
 
     .hero h1 {
         font-size: clamp(2.2rem, 10vw, 3rem);
+
         letter-spacing: -1px;
     }
 
@@ -1259,6 +1392,7 @@ button {
 
     .hero-buttons {
         align-items: stretch;
+
         flex-direction: column;
     }
 
@@ -1274,6 +1408,7 @@ button {
 
     .section-heading {
         width: 90%;
+
         margin-bottom: 40px;
     }
 
@@ -1289,7 +1424,9 @@ button {
 
     .services-grid {
         width: 90%;
+
         grid-template-columns: 1fr;
+
         gap: 18px;
     }
 
@@ -1307,6 +1444,7 @@ button {
         width: 90%;
 
         grid-template-columns: 1fr;
+
         gap: 40px;
 
         padding: 70px 0;
@@ -1339,7 +1477,9 @@ button {
 
     .features-grid {
         width: 90%;
+
         grid-template-columns: 1fr;
+
         gap: 18px;
     }
 
@@ -1350,7 +1490,9 @@ button {
 
     .portfolio-grid {
         width: 90%;
+
         grid-template-columns: 1fr;
+
         gap: 20px;
     }
 
@@ -1371,6 +1513,7 @@ button {
 
     .cta-buttons {
         flex-direction: column;
+
         align-items: stretch;
     }
 
@@ -1382,70 +1525,82 @@ button {
 }
 
 
-/* =========================================
-   Small Phone Refinements
-   ========================================= */
+/* ========================================
+   SMALL PHONE REFINEMENTS
+   Below 375px
+======================================== */
 
 @media (max-width: 375px) {
 
-    .logo {
-        font-size: 1.1rem;
-    }
-
     .hero {
         gap: 30px;
+
         padding: 50px 0;
     }
+
 
     .hero h1 {
         font-size: 2.2rem;
     }
 
+
     .hero-label {
         font-size: 0.72rem;
+
         letter-spacing: 1.2px;
     }
+
 
     .hero-image img {
         height: 280px;
     }
 
+
     .section-heading {
         margin-bottom: 32px;
     }
 
+
     .section-heading h2 {
         font-size: 1.9rem;
     }
+
 
     .service-card,
     .feature-card {
         padding: 24px;
     }
 
+
     .about-preview {
         padding: 60px 0;
     }
+
 
     .about-image img {
         height: 280px;
     }
 
+
     .about-points {
         margin: 24px 0;
     }
+
 
     .project-content {
         padding: 24px;
     }
 
+
     .project-image img {
         height: 210px;
     }
 
+
     .final-cta {
         padding: 60px 20px;
     }
+
 
     .final-cta h2 {
         font-size: 2rem;
@@ -1453,12 +1608,14 @@ button {
 
 }
 
-/* =========================================
-   Scroll-to-Top Button
-   ========================================= */
+
+/* ========================================
+   SCROLL-TO-TOP BUTTON
+======================================== */
 
 .scroll-top {
     position: fixed;
+
     right: 24px;
     bottom: 24px;
 
@@ -1466,13 +1623,16 @@ button {
     height: 46px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     border: none;
+
     border-radius: 50%;
 
     background-color: var(--color-primary);
+
     color: #ffffff;
 
     font-size: 1.3rem;
@@ -1482,6 +1642,7 @@ button {
 
     opacity: 0;
     visibility: hidden;
+
     transform: translateY(15px);
 
     transition:
@@ -1493,76 +1654,96 @@ button {
     z-index: 999;
 }
 
+
 .scroll-top:hover {
     background-color: var(--color-primary-dark);
 }
 
+
 .scroll-top.show {
     opacity: 1;
+
     visibility: visible;
+
     transform: translateY(0);
 }
 
-/* =========================================
-   Active Navigation Link
-   ========================================= */
+
+/* ========================================
+   ACTIVE NAVIGATION LINK
+======================================== */
 
 .nav-links a.active {
     color: var(--color-primary);
+
     font-weight: 600;
 }
 
 
-/* =========================================
-   Scroll Reveal Animation
-   ========================================= */
+/* ========================================
+   SCROLL REVEAL ANIMATION
+======================================== */
 
 .reveal {
     opacity: 0;
+
     transform: translateY(30px);
+
     transition:
         opacity 0.7s ease,
         transform 0.7s ease;
 }
 
+
 .reveal.visible {
     opacity: 1;
+
     transform: translateY(0);
 }
+
 
 @media (prefers-reduced-motion: reduce) {
 
     .reveal {
         opacity: 1;
+
         transform: none;
+
         transition: none;
     }
 
 }
 
-/* =========================================
-   Portfolio Filters
-   ========================================= */
+
+/* ========================================
+   PORTFOLIO FILTERS
+======================================== */
 
 .portfolio-filters {
     width: min(90%, 1200px);
+
     margin: 0 auto 35px;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
     gap: 12px;
+
     flex-wrap: wrap;
 }
+
 
 .filter-button {
     padding: 10px 18px;
 
     border: 1px solid var(--color-border);
+
     border-radius: 8px;
 
     background-color: var(--color-background);
+
     color: var(--color-text);
 
     font-size: 0.9rem;
@@ -1576,13 +1757,18 @@ button {
         border-color 0.3s ease;
 }
 
+
 .filter-button:hover {
     color: var(--color-primary);
+
     border-color: var(--color-primary);
 }
 
+
 .filter-button.active {
     background-color: var(--color-primary);
+
     color: #ffffff;
+
     border-color: var(--color-primary);
 }
