@@ -140,16 +140,23 @@ nav {
 }
 
 
-/* ========================================
-   LOGO
-======================================== */
+/* ================================
+   Company Logo
+================================ */
 
 .logo {
-    color: var(--color-heading);
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 700;
-    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.logo img {
+    display: block;
+    width: 150px;
+    height: auto;
+    max-height: 60px;
+    object-fit: contain;
 }
 
 
