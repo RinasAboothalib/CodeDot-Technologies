@@ -1,0 +1,2791 @@
+/* =========================================================
+   CODEDOT TECHNOLOGIES
+   MAIN WEBSITE STYLESHEET
+   ========================================================= */
+
+
+/* =========================================================
+   01. CSS RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+
+    color: #475569;
+    background-color: #ffffff;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+
+    color: #0f172a;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   02. ROOT VARIABLES
+   ========================================================= */
+
+:root {
+
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #eff6ff;
+
+    --heading: #0f172a;
+    --text: #475569;
+    --light-text: #64748b;
+
+    --white: #ffffff;
+
+    --background: #ffffff;
+    --section: #f8fafc;
+
+    --border: #e2e8f0;
+
+    --dark: #020617;
+    --dark-secondary: #0f172a;
+
+    --success: #16a34a;
+
+    --container: 1200px;
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+
+    --shadow-sm:
+        0 4px 15px rgba(15, 23, 42, 0.05);
+
+    --shadow-md:
+        0 12px 30px rgba(15, 23, 42, 0.08);
+
+    --shadow-lg:
+        0 25px 60px rgba(15, 23, 42, 0.12);
+
+    --transition:
+        all 0.3s ease;
+}
+
+
+/* =========================================================
+   03. GLOBAL CONTAINER
+   ========================================================= */
+
+.container {
+    width: min(92%, var(--container));
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   04. HEADER
+   ========================================================= */
+
+header {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    background-color: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* =========================================================
+   05. NAVIGATION
+   ========================================================= */
+
+nav {
+    width: min(92%, var(--container));
+
+    min-height: 80px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   06. LOGO
+   ========================================================= */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    width: 180px;
+    height: 70px;
+
+    flex-shrink: 0;
+}
+
+
+.logo img {
+    display: block;
+
+    width: 170px;
+    height: 60px;
+
+    object-fit: contain;
+
+    object-position: left center;
+}
+
+
+/*
+   Text logo fallback
+   Used if a page contains:
+   <a class="logo">CodeDot Technologies</a>
+*/
+
+a.logo:not(:has(img)) {
+    width: auto;
+    height: auto;
+
+    color: var(--heading);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 1.15rem;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   07. NAVIGATION LINKS
+   ========================================================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 30px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.nav-links li {
+    display: flex;
+
+    align-items: center;
+}
+
+
+.nav-links a {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 80px;
+
+    color: var(--text);
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    transition: color 0.25s ease;
+}
+
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 2px;
+
+    background-color: var(--primary);
+
+    transform: scaleX(0);
+
+    transform-origin: center;
+
+    transition: transform 0.25s ease;
+}
+
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary);
+}
+
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   08. MOBILE MENU BUTTON
+   ========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-sm);
+
+    background-color: var(--white);
+
+    color: var(--heading);
+
+    font-size: 1.5rem;
+
+    line-height: 1;
+
+    transition: var(--transition);
+}
+
+
+.menu-toggle:hover {
+    border-color: var(--primary);
+
+    color: var(--primary);
+
+    background-color: var(--primary-light);
+}
+
+
+/* =========================================================
+   09. GLOBAL SECTION LABEL
+   ========================================================= */
+
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    color: var(--primary);
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.4;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   10. SECTION HEADING
+   ========================================================= */
+
+.section-heading {
+    width: min(92%, 760px);
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+
+.section-heading h2 {
+    margin-bottom: 18px;
+
+    color: var(--heading);
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    font-weight: 700;
+
+    letter-spacing: -0.8px;
+}
+
+
+.section-heading p {
+    max-width: 680px;
+
+    margin: 0 auto;
+
+    color: var(--text);
+
+    font-size: 1rem;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   11. BUTTONS
+   ========================================================= */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 0 24px;
+
+    border: 1px solid transparent;
+
+    border-radius: var(--radius-sm);
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.btn-primary {
+    background-color: var(--primary);
+
+    color: var(--white);
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.18);
+}
+
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+
+    border-color: var(--primary-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(37, 99, 235, 0.25);
+}
+
+
+.btn-secondary {
+    background-color: var(--white);
+
+    color: var(--heading);
+
+    border-color: var(--border);
+}
+
+
+.btn-secondary:hover {
+    color: var(--primary);
+
+    border-color: var(--primary);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   12. HOMEPAGE HERO
+   ========================================================= */
+
+.hero {
+    width: min(92%, var(--container));
+
+    min-height: calc(100vh - 80px);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 70px;
+
+    padding: 70px 0;
+}
+
+
+/* =========================================================
+   13. HERO CONTENT
+   ========================================================= */
+
+.hero-content {
+    width: 100%;
+
+    max-width: 590px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.hero-label {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: var(--primary);
+
+    font-size: 0.82rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.4;
+}
+
+
+.hero h1 {
+    margin-bottom: 22px;
+
+    color: var(--heading);
+
+    font-size: clamp(3rem, 5vw, 4.8rem);
+
+    font-weight: 700;
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+}
+
+
+.hero-content > p {
+    max-width: 540px;
+
+    margin-bottom: 30px;
+
+    color: var(--text);
+
+    font-size: 1.05rem;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   14. HERO BUTTONS
+   ========================================================= */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   15. HERO IMAGE
+   ========================================================= */
+
+.hero-image {
+    width: 100%;
+
+    max-width: 560px;
+
+    margin-left: auto;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-xl);
+
+    box-shadow: var(--shadow-lg);
+
+    background-color: var(--section);
+}
+
+
+.hero-image img {
+    display: block;
+
+    width: 100%;
+
+    height: 500px;
+
+    object-fit: cover;
+
+    border-radius: var(--radius-xl);
+
+    transition: transform 0.5s ease;
+}
+
+
+.hero-image:hover img {
+    transform: scale(1.025);
+}
+
+
+/* =========================================================
+   16. SERVICES PREVIEW - HOME
+   ========================================================= */
+
+.services-preview {
+    padding: 100px 0;
+
+    background-color: var(--section);
+}
+
+
+.services-grid {
+    width: min(92%, var(--container));
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   17. SERVICE CARD
+   ========================================================= */
+
+.service-card {
+    min-width: 0;
+
+    padding: 32px;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.service-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(37, 99, 235, 0.3);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+.service-card h3 {
+    margin-bottom: 14px;
+
+    color: var(--heading);
+
+    font-size: 1.2rem;
+}
+
+
+.service-card p {
+    margin-bottom: 20px;
+
+    color: var(--text);
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+}
+
+
+.service-card a {
+    color: var(--primary);
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    transition: color 0.25s ease;
+}
+
+
+.service-card a:hover {
+    color: var(--primary-dark);
+}
+
+
+/* =========================================================
+   18. ABOUT PREVIEW - HOME
+   ========================================================= */
+
+.about-preview {
+    width: min(92%, var(--container));
+
+    margin: 0 auto;
+
+    padding: 100px 0;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+.about-image {
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-xl);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+.about-image img {
+    width: 100%;
+
+    height: 520px;
+
+    object-fit: cover;
+
+    border-radius: var(--radius-xl);
+
+    transition: transform 0.5s ease;
+}
+
+
+.about-image:hover img {
+    transform: scale(1.025);
+}
+
+
+.about-content {
+    width: 100%;
+
+    max-width: 600px;
+}
+
+
+.about-content h2 {
+    margin-bottom: 22px;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    letter-spacing: -0.8px;
+}
+
+
+.about-content p {
+    margin-bottom: 18px;
+
+    color: var(--text);
+
+    line-height: 1.75;
+}
+
+
+.about-points {
+    margin: 28px 0;
+
+    list-style: none;
+}
+
+
+.about-points li {
+    position: relative;
+
+    margin-bottom: 12px;
+
+    padding-left: 28px;
+
+    color: var(--heading);
+
+    font-weight: 500;
+}
+
+
+.about-points li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    color: var(--primary);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   19. WHY CHOOSE US
+   ========================================================= */
+
+.why-choose-us {
+    padding: 100px 0;
+
+    background-color: var(--section);
+}
+
+
+.features-grid {
+    width: min(92%, var(--container));
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+
+.feature-card {
+    min-width: 0;
+
+    padding: 32px;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.feature-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(37, 99, 235, 0.3);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: var(--radius-md);
+
+    background-color: var(--primary-light);
+
+    color: var(--primary);
+
+    font-size: 1.15rem;
+
+    font-weight: 700;
+}
+
+
+.feature-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 1.15rem;
+}
+
+
+.feature-card p {
+    color: var(--text);
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   20. PORTFOLIO PREVIEW
+   ========================================================= */
+
+.portfolio-preview {
+    padding: 100px 0;
+}
+
+
+.portfolio-grid {
+    width: min(92%, var(--container));
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   21. PROJECT CARD
+   ========================================================= */
+
+.project-card {
+    min-width: 0;
+
+    overflow: hidden;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.project-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+.project-image {
+    width: 100%;
+
+    overflow: hidden;
+
+    background-color: var(--section);
+}
+
+
+.project-image img {
+    width: 100%;
+
+    height: 230px;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+
+.project-card:hover .project-image img {
+    transform: scale(1.04);
+}
+
+
+.project-content {
+    padding: 28px;
+}
+
+
+.project-category {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: var(--primary);
+
+    font-size: 0.76rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+}
+
+
+.project-content h3 {
+    margin-bottom: 12px;
+
+    font-size: 1.2rem;
+}
+
+
+.project-content p {
+    margin-bottom: 20px;
+
+    color: var(--text);
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+}
+
+
+.project-content a {
+    color: var(--primary);
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+}
+
+
+.project-content a:hover {
+    color: var(--primary-dark);
+}
+
+
+/* =========================================================
+   22. PORTFOLIO ACTION
+   ========================================================= */
+
+.portfolio-action {
+    margin-top: 50px;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+
+/* =========================================================
+   23. PAGE HERO
+   Used by About / Services / Portfolio / Contact
+   ========================================================= */
+
+.page-hero {
+    width: 100%;
+
+    min-height: 430px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 70px 20px;
+
+    background:
+        radial-gradient(
+            circle at 15% 30%,
+            rgba(37, 99, 235, 0.08),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(37, 99, 235, 0.06),
+            transparent 35%
+        ),
+        var(--section);
+
+    border-bottom: 1px solid var(--border);
+
+    text-align: center;
+}
+
+
+.page-hero-content {
+    width: min(100%, 850px);
+
+    margin: 0 auto;
+}
+
+
+.page-hero .section-label {
+    margin-bottom: 18px;
+}
+
+
+.page-hero h1 {
+    margin-bottom: 22px;
+
+    color: var(--heading);
+
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+
+    line-height: 1.08;
+
+    letter-spacing: -1.5px;
+}
+
+
+.page-hero p {
+    width: min(100%, 700px);
+
+    margin: 0 auto;
+
+    color: var(--text);
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   24. ABOUT PAGE
+   ========================================================= */
+
+.about-introduction {
+    width: min(92%, var(--container));
+
+    margin: 0 auto;
+
+    padding: 100px 0;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+.about-introduction-image {
+    width: 100%;
+
+    min-height: 380px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #f8fafc
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-xl);
+
+    box-shadow: var(--shadow-sm);
+}
+
+
+.about-introduction-image .logo {
+    width: 100%;
+
+    height: auto;
+
+    justify-content: center;
+}
+
+
+.about-introduction-image .logo img {
+    width: min(100%, 360px);
+
+    height: auto;
+
+    max-height: 220px;
+
+    object-fit: contain;
+}
+
+
+.about-introduction-content {
+    width: 100%;
+
+    max-width: 620px;
+}
+
+
+.about-introduction-content h2 {
+    margin-bottom: 24px;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    letter-spacing: -0.8px;
+}
+
+
+.about-introduction-content p {
+    margin-bottom: 18px;
+
+    color: var(--text);
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   25. ABOUT APPROACH
+   ========================================================= */
+
+.about-approach {
+    padding: 100px 0;
+
+    background-color: var(--section);
+}
+
+
+.approach-grid {
+    width: min(92%, var(--container));
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+.approach-card {
+    min-width: 0;
+
+    padding: 30px;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.approach-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+.approach-card .feature-icon {
+    margin-bottom: 20px;
+}
+
+
+.approach-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 1.15rem;
+}
+
+
+.approach-card p {
+    color: var(--text);
+
+    font-size: 0.94rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   26. MISSION SECTION
+   ========================================================= */
+
+.mission-section {
+    padding: 100px 20px;
+
+    background-color: var(--white);
+
+    text-align: center;
+}
+
+
+.mission-content {
+    width: min(100%, 800px);
+
+    margin: 0 auto;
+}
+
+
+.mission-content h2 {
+    margin-bottom: 20px;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+
+.mission-content p {
+    color: var(--text);
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   27. SERVICES PAGE
+   ========================================================= */
+
+.services-page {
+    padding: 100px 0;
+
+    background-color: var(--white);
+}
+
+
+.services-page-grid {
+    width: min(92%, var(--container));
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+
+.service-detail-card {
+    min-width: 0;
+
+    padding: 34px;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.service-detail-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(37, 99, 235, 0.3);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+.service-number {
+    width: 50px;
+    height: 50px;
+
+    margin-bottom: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: var(--radius-md);
+
+    background-color: var(--primary-light);
+
+    color: var(--primary);
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+}
+
+
+.service-detail-card h3 {
+    margin-bottom: 14px;
+
+    font-size: 1.25rem;
+}
+
+
+.service-detail-card p {
+    margin-bottom: 20px;
+
+    color: var(--text);
+
+    font-size: 0.95rem;
+
+    line-height: 1.75;
+}
+
+
+.service-detail-card ul {
+    list-style: none;
+}
+
+
+.service-detail-card li {
+    position: relative;
+
+    margin-bottom: 10px;
+
+    padding-left: 22px;
+
+    color: var(--heading);
+
+    font-size: 0.9rem;
+}
+
+
+.service-detail-card li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    color: var(--primary);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   28. SERVICES PROCESS
+   ========================================================= */
+
+.service-process {
+    padding: 100px 0;
+
+    background-color: var(--section);
+}
+
+
+.process-grid {
+    width: min(92%, var(--container));
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+.process-card {
+    padding: 30px;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+}
+
+
+.process-number {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    margin-bottom: 20px;
+
+    border-radius: 50%;
+
+    background-color: var(--primary);
+
+    color: var(--white);
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+}
+
+
+.process-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 1.15rem;
+}
+
+
+.process-card p {
+    color: var(--text);
+
+    font-size: 0.94rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   29. PORTFOLIO PAGE
+   ========================================================= */
+
+.portfolio-page {
+    padding: 100px 0;
+
+    background-color: var(--white);
+}
+
+
+/* =========================================================
+   30. PORTFOLIO FILTERS
+   ========================================================= */
+
+.portfolio-filters {
+    width: min(92%, var(--container));
+
+    margin: 0 auto 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+
+.filter-button {
+    min-height: 42px;
+
+    padding: 0 17px;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-sm);
+
+    background-color: var(--white);
+
+    color: var(--text);
+
+    font-size: 0.88rem;
+
+    font-weight: 600;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.filter-button:hover {
+    color: var(--primary);
+
+    border-color: var(--primary);
+}
+
+
+.filter-button.active {
+    background-color: var(--primary);
+
+    color: var(--white);
+
+    border-color: var(--primary);
+}
+
+
+/*
+   Used by JavaScript when filtering projects
+*/
+
+.project-card.hidden {
+    display: none;
+}
+
+
+/* =========================================================
+   31. CONTACT PAGE
+   ========================================================= */
+
+.contact-page {
+    padding: 100px 0;
+
+    background-color: var(--white);
+}
+
+
+.contact-grid {
+    width: min(92%, var(--container));
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+
+    align-items: start;
+
+    gap: 70px;
+}
+
+
+/* =========================================================
+   32. CONTACT INFORMATION
+   ========================================================= */
+
+.contact-info {
+    width: 100%;
+
+    max-width: 550px;
+}
+
+
+.contact-info h2 {
+    margin-bottom: 20px;
+
+    font-size: clamp(2rem, 4vw, 2.8rem);
+
+    letter-spacing: -0.8px;
+}
+
+
+.contact-info > p {
+    margin-bottom: 35px;
+
+    color: var(--text);
+
+    line-height: 1.8;
+}
+
+
+.contact-item {
+    margin-bottom: 24px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.contact-item:last-child {
+    margin-bottom: 0;
+
+    border-bottom: none;
+}
+
+
+.contact-item h3 {
+    margin-bottom: 5px;
+
+    font-size: 1rem;
+}
+
+
+.contact-item p {
+    color: var(--text);
+
+    font-size: 0.95rem;
+}
+
+
+.contact-item a {
+    color: var(--primary);
+
+    font-weight: 500;
+
+    transition: color 0.25s ease;
+}
+
+
+.contact-item a:hover {
+    color: var(--primary-dark);
+}
+
+
+/* =========================================================
+   33. CONTACT FORM
+   ========================================================= */
+
+.contact-form-wrapper {
+    width: 100%;
+
+    padding: 36px;
+
+    background-color: var(--section);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-xl);
+
+    box-shadow: var(--shadow-sm);
+}
+
+
+.contact-form {
+    width: 100%;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--heading);
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+}
+
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-sm);
+
+    background-color: var(--white);
+
+    color: var(--heading);
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.form-group input {
+    height: 50px;
+}
+
+
+.form-group textarea {
+    min-height: 150px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+.contact-form button {
+    width: 100%;
+
+    min-height: 50px;
+
+    border: none;
+
+    border-radius: var(--radius-sm);
+
+    background-color: var(--primary);
+
+    color: var(--white);
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.contact-form button:hover {
+    background-color: var(--primary-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.2);
+}
+
+
+/* =========================================================
+   34. FINAL CTA
+   ========================================================= */
+
+.final-cta {
+    width: 100%;
+
+    padding: 100px 20px;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(37, 99, 235, 0.15),
+            transparent 30%
+        ),
+        var(--dark);
+
+    color: var(--white);
+
+    text-align: center;
+}
+
+
+.cta-content {
+    width: min(100%, 800px);
+
+    margin: 0 auto;
+}
+
+
+.final-cta .section-label {
+    color: #60a5fa;
+}
+
+
+.final-cta h2 {
+    margin-bottom: 20px;
+
+    color: var(--white);
+
+    font-size: clamp(2rem, 4vw, 3.2rem);
+
+    letter-spacing: -0.8px;
+}
+
+
+.final-cta p {
+    max-width: 650px;
+
+    margin: 0 auto 32px;
+
+    color: #cbd5e1;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+
+.cta-buttons {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+}
+
+
+.final-cta .btn-secondary {
+    background-color: transparent;
+
+    color: var(--white);
+
+    border-color: #475569;
+}
+
+
+.final-cta .btn-secondary:hover {
+    color: var(--white);
+
+    background-color: rgba(255, 255, 255, 0.05);
+
+    border-color: #60a5fa;
+}
+
+
+/* =========================================================
+   35. FOOTER
+   ========================================================= */
+
+footer {
+    width: 100%;
+
+    padding: 28px 20px;
+
+    background-color: #020617;
+
+    color: #94a3b8;
+
+    text-align: center;
+
+    border-top: 1px solid #1e293b;
+}
+
+
+footer p {
+    font-size: 0.88rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   36. SCROLL TO TOP
+   ========================================================= */
+
+.scroll-top {
+    position: fixed;
+
+    right: 24px;
+    bottom: 24px;
+
+    z-index: 999;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: var(--primary);
+
+    color: var(--white);
+
+    font-size: 1.2rem;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+.scroll-top.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+.scroll-top:hover {
+    background-color: var(--primary-dark);
+}
+
+
+/* =========================================================
+   37. ACTIVE NAVIGATION
+   ========================================================= */
+
+.nav-links a.active {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   38. SCROLL REVEAL
+   ========================================================= */
+
+.reveal {
+    opacity: 1;
+
+    transform: none;
+}
+
+
+/*
+   Keep this disabled until JavaScript animation
+   is confirmed working on every page.
+*/
+
+
+/* =========================================================
+   39. FOCUS ACCESSIBILITY
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.3);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   40. TEXT SELECTION
+   ========================================================= */
+
+::selection {
+    background-color: var(--primary);
+
+    color: var(--white);
+}
+
+
+/* =========================================================
+   41. TABLET
+   1024px AND BELOW
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    nav {
+        width: 92%;
+    }
+
+
+    .hero {
+        width: 92%;
+
+        gap: 45px;
+
+        padding: 60px 0;
+    }
+
+
+    .hero h1 {
+        font-size: clamp(2.7rem, 5vw, 3.8rem);
+    }
+
+
+    .hero-image img {
+        height: 430px;
+    }
+
+
+    .about-preview,
+    .about-introduction {
+        width: 92%;
+
+        gap: 50px;
+
+        padding: 80px 0;
+    }
+
+
+    .about-image img {
+        height: 450px;
+    }
+
+
+    .about-approach,
+    .services-page,
+    .service-process,
+    .portfolio-page,
+    .contact-page {
+        padding: 80px 0;
+    }
+
+
+    .services-preview,
+    .why-choose-us,
+    .portfolio-preview {
+        padding: 80px 0;
+    }
+
+
+    .approach-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+
+    .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+
+    .contact-grid {
+        gap: 45px;
+    }
+
+
+    .final-cta {
+        padding: 80px 20px;
+    }
+}
+
+
+/* =========================================================
+   42. TABLET SMALL
+   900px AND BELOW
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .services-grid,
+    .features-grid,
+    .portfolio-grid,
+    .services-page-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+
+    .about-preview,
+    .about-introduction,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .about-content,
+    .about-introduction-content,
+    .contact-info {
+        max-width: 100%;
+    }
+
+
+    .about-image {
+        max-width: 650px;
+
+        margin: 0 auto;
+    }
+
+
+    .about-introduction-image {
+        max-width: 650px;
+
+        margin: 0 auto;
+
+        min-height: 320px;
+    }
+
+
+    .contact-info {
+        margin: 0 auto;
+    }
+}
+
+
+/* =========================================================
+   43. MOBILE
+   767px AND BELOW
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    /* -----------------------------------------
+       NAVIGATION
+    ----------------------------------------- */
+
+    nav {
+        width: 90%;
+
+        min-height: 70px;
+
+        position: relative;
+    }
+
+
+    .logo {
+        width: 145px;
+
+        height: 60px;
+    }
+
+
+    .logo img {
+        width: 140px;
+
+        height: 52px;
+    }
+
+
+    .menu-toggle {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+    }
+
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+
+        left: 0;
+        right: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 8px 0;
+
+        background-color: var(--white);
+
+        border: 1px solid var(--border);
+
+        border-top: none;
+
+        box-shadow:
+            0 15px 30px rgba(15, 23, 42, 0.08);
+    }
+
+
+    .nav-links.active {
+        display: flex;
+    }
+
+
+    .nav-links li {
+        width: 100%;
+    }
+
+
+    .nav-links a {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 14px 20px;
+
+        font-size: 0.95rem;
+    }
+
+
+    .nav-links a::after {
+        display: none;
+    }
+
+
+    .nav-links a:hover {
+        background-color: var(--section);
+    }
+
+
+    /* -----------------------------------------
+       HERO
+    ----------------------------------------- */
+
+    .hero {
+        width: 90%;
+
+        min-height: auto;
+
+        grid-template-columns: 1fr;
+
+        gap: 42px;
+
+        padding: 60px 0 70px;
+    }
+
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+
+    .hero-label {
+        margin-bottom: 15px;
+
+        font-size: 0.74rem;
+
+        letter-spacing: 1.2px;
+    }
+
+
+    .hero h1 {
+        margin-bottom: 20px;
+
+        font-size: clamp(2.5rem, 11vw, 3.5rem);
+
+        line-height: 1.07;
+
+        letter-spacing: -1.5px;
+    }
+
+
+    .hero-content > p {
+        margin-bottom: 26px;
+
+        font-size: 1rem;
+
+        line-height: 1.7;
+    }
+
+
+    .hero-buttons {
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+
+    .hero-image {
+        width: 100%;
+
+        max-width: none;
+
+        margin: 0;
+    }
+
+
+    .hero-image img {
+        width: 100%;
+
+        height: 350px;
+    }
+
+
+    /* -----------------------------------------
+       GENERAL SECTIONS
+    ----------------------------------------- */
+
+    .services-preview,
+    .why-choose-us,
+    .portfolio-preview,
+    .about-approach,
+    .services-page,
+    .service-process,
+    .portfolio-page,
+    .contact-page {
+        padding: 70px 0;
+    }
+
+
+    .about-preview,
+    .about-introduction {
+        width: 90%;
+
+        gap: 40px;
+
+        padding: 70px 0;
+    }
+
+
+    /* -----------------------------------------
+       SECTION HEADING
+    ----------------------------------------- */
+
+    .section-heading {
+        width: 90%;
+
+        margin-bottom: 40px;
+    }
+
+
+    .section-heading h2 {
+        font-size: clamp(1.9rem, 8vw, 2.5rem);
+    }
+
+
+    /* -----------------------------------------
+       SERVICE GRID
+    ----------------------------------------- */
+
+    .services-grid,
+    .features-grid,
+    .portfolio-grid,
+    .services-page-grid {
+        width: 90%;
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .service-card,
+    .feature-card,
+    .service-detail-card {
+        padding: 28px;
+    }
+
+
+    /* -----------------------------------------
+       ABOUT
+    ----------------------------------------- */
+
+    .about-image {
+        order: 1;
+    }
+
+
+    .about-content {
+        order: 2;
+    }
+
+
+    .about-image img {
+        height: 350px;
+    }
+
+
+    .about-content h2,
+    .about-introduction-content h2 {
+        font-size: clamp(1.9rem, 8vw, 2.5rem);
+    }
+
+
+    .about-introduction-image {
+        width: 100%;
+
+        min-height: 280px;
+
+        padding: 25px;
+    }
+
+
+    /* -----------------------------------------
+       APPROACH
+    ----------------------------------------- */
+
+    .approach-grid {
+        width: 90%;
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    /* -----------------------------------------
+       PROCESS
+    ----------------------------------------- */
+
+    .process-grid {
+        width: 90%;
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    /* -----------------------------------------
+       PAGE HERO
+    ----------------------------------------- */
+
+    .page-hero {
+        min-height: 360px;
+
+        padding: 60px 20px;
+    }
+
+
+    .page-hero h1 {
+        font-size: clamp(2.2rem, 9vw, 3rem);
+
+        letter-spacing: -1px;
+    }
+
+
+    .page-hero p {
+        font-size: 0.98rem;
+
+        line-height: 1.7;
+    }
+
+
+    /* -----------------------------------------
+       PORTFOLIO
+    ----------------------------------------- */
+
+    .portfolio-filters {
+        width: 90%;
+
+        margin-bottom: 35px;
+
+        gap: 8px;
+    }
+
+
+    .filter-button {
+        min-height: 40px;
+
+        padding: 0 13px;
+
+        font-size: 0.82rem;
+    }
+
+
+    .project-image img {
+        height: 240px;
+    }
+
+
+    .project-content {
+        padding: 25px;
+    }
+
+
+    /* -----------------------------------------
+       CONTACT
+    ----------------------------------------- */
+
+    .contact-grid {
+        width: 90%;
+
+        gap: 45px;
+    }
+
+
+    .contact-info {
+        max-width: 100%;
+    }
+
+
+    .contact-form-wrapper {
+        padding: 25px;
+
+        border-radius: var(--radius-lg);
+    }
+
+
+    /* -----------------------------------------
+       CTA
+    ----------------------------------------- */
+
+    .final-cta {
+        padding: 70px 20px;
+    }
+
+
+    .cta-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        width: 100%;
+    }
+
+
+    .cta-buttons .btn {
+        width: 100%;
+    }
+
+
+    /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
+
+    footer {
+        padding: 24px 15px;
+    }
+
+
+    /* -----------------------------------------
+       SCROLL TOP
+    ----------------------------------------- */
+
+    .scroll-top {
+        right: 18px;
+
+        bottom: 18px;
+
+        width: 44px;
+
+        height: 44px;
+    }
+}
+
+
+/* =========================================================
+   44. SMALL PHONES
+   375px AND BELOW
+   ========================================================= */
+
+@media (max-width: 375px) {
+
+    nav {
+        width: 92%;
+    }
+
+
+    .logo {
+        width: 130px;
+
+        height: 55px;
+    }
+
+
+    .logo img {
+        width: 125px;
+
+        height: 48px;
+    }
+
+
+    .hero {
+        width: 92%;
+
+        gap: 32px;
+
+        padding: 50px 0 60px;
+    }
+
+
+    .hero h1 {
+        font-size: 2.25rem;
+
+        letter-spacing: -1px;
+    }
+
+
+    .hero-image img {
+        height: 280px;
+    }
+
+
+    .section-heading {
+        width: 92%;
+    }
+
+
+    .section-heading h2 {
+        font-size: 1.85rem;
+    }
+
+
+    .service-card,
+    .feature-card,
+    .service-detail-card,
+    .process-card,
+    .approach-card {
+        padding: 24px;
+    }
+
+
+    .about-preview,
+    .about-introduction {
+        width: 92%;
+
+        padding: 60px 0;
+    }
+
+
+    .about-image img {
+        height: 280px;
+    }
+
+
+    .about-introduction-image {
+        min-height: 240px;
+
+        padding: 20px;
+    }
+
+
+    .project-image img {
+        height: 210px;
+    }
+
+
+    .project-content {
+        padding: 23px;
+    }
+
+
+    .page-hero {
+        min-height: 330px;
+
+        padding: 50px 18px;
+    }
+
+
+    .page-hero h1 {
+        font-size: 2.2rem;
+    }
+
+
+    .final-cta {
+        padding: 60px 18px;
+    }
+
+
+    .final-cta h2 {
+        font-size: 2rem;
+    }
+
+
+    .contact-form-wrapper {
+        padding: 20px;
+    }
+}
+
+
+/* =========================================================
+   45. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+}
