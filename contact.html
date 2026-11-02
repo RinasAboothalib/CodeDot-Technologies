@@ -31,39 +31,71 @@
         rel="stylesheet"
     >
 
-    <!-- CSS -->
+    <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- JavaScript -->
+    <!-- Main JavaScript -->
     <script src="js/script.js" defer></script>
 
 </head>
 
 <body>
 
-    <!-- Header -->
+    <!-- =========================
+         HEADER
+    ========================== -->
     <header>
 
         <nav>
 
-            <a href="index.html" class="logo">
-                CodeDot Technologies
+            <!-- Company Logo -->
+            <a
+                href="index.html"
+                class="logo"
+                aria-label="CodeDot Technologies Home"
+            >
+                <img
+                    src="images/logo.jpg"
+                    alt="CodeDot Technologies logo"
+                >
             </a>
 
+            <!-- Navigation Links -->
             <ul class="nav-links">
 
-                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
 
-                <li><a href="about.html">About Us</a></li>
+                <li>
+                    <a href="about.html">
+                        About Us
+                    </a>
+                </li>
 
-                <li><a href="services.html">Services</a></li>
+                <li>
+                    <a href="services.html">
+                        Services
+                    </a>
+                </li>
 
-                <li><a href="portfolio.html">Portfolio</a></li>
+                <li>
+                    <a href="portfolio.html">
+                        Portfolio
+                    </a>
+                </li>
 
-                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
 
             </ul>
 
+            <!-- Mobile Menu Button -->
             <button
                 type="button"
                 class="menu-toggle"
@@ -78,15 +110,20 @@
     </header>
 
 
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
     <main>
 
-        <!-- Page Hero -->
+        <!-- =========================
+             PAGE HERO
+        ========================== -->
         <section class="page-hero">
 
             <div class="page-hero-content">
 
                 <span class="section-label">
-                    <h2>Send Us a Message</h2>
+                    GET IN TOUCH
                 </span>
 
                 <h1>
@@ -103,28 +140,38 @@
         </section>
 
 
-        <!-- Contact Section -->
+        <!-- =========================
+             CONTACT SECTION
+        ========================== -->
         <section class="contact-page">
 
             <div class="contact-grid">
 
-                <!-- Contact Information -->
+                <!-- =========================
+                     CONTACT INFORMATION
+                ========================== -->
                 <div class="contact-info">
 
                     <span class="section-label">
                         GET IN TOUCH
                     </span>
 
-                    <h2>Let's Build Something Together</h2>
+                    <h2>
+                        Let's Build Something Together
+                    </h2>
 
-                        <p>
-                            Have a project idea, business requirement, or digital challenge?
-                            Get in touch with CodeDot Technologies and let's discuss a practical solution.
-                        </p>
+                    <p>
+                        Have a project idea, business requirement, or digital challenge?
+                        Get in touch with CodeDot Technologies and let's discuss a practical solution.
+                    </p>
 
+
+                    <!-- Email -->
                     <div class="contact-item">
 
-                        <h3>Email</h3>
+                        <h3>
+                            Email
+                        </h3>
 
                         <p>
                             <a href="mailto:codedot.technologies@gmail.com">
@@ -134,9 +181,13 @@
 
                     </div>
 
+
+                    <!-- Phone -->
                     <div class="contact-item">
 
-                        <h3>Phone</h3>
+                        <h3>
+                            Phone
+                        </h3>
 
                         <p>
                             <a href="tel:+94759795422">
@@ -146,11 +197,13 @@
 
                     </div>
 
+
+                    <!-- Location -->
                     <div class="contact-item">
 
-                        <div class="contact-item">
-
-                        <h3>Location</h3>
+                        <h3>
+                            Location
+                        </h3>
 
                         <p>
                             Trincomalee, Sri Lanka
@@ -158,28 +211,41 @@
 
                     </div>
 
+
+                    <!-- WhatsApp -->
                     <div class="contact-item">
 
-                        <h3>WhatsApp</h3>
+                        <h3>
+                            WhatsApp
+                        </h3>
 
-                        <a
-                            href="https://wa.me/94759795422"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Chat on WhatsApp
-                        </a>
+                        <p>
+                            <a
+                                href="https://wa.me/94759795422"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Chat on WhatsApp
+                            </a>
+                        </p>
 
                     </div>
 
                 </div>
 
 
-                <!-- Contact Form -->
+                <!-- =========================
+                     CONTACT FORM
+                ========================== -->
                 <div class="contact-form-wrapper">
 
-                    <form class="contact-form">
+                    <form
+                        class="contact-form"
+                        action="#"
+                        method="post"
+                    >
 
+                        <!-- Full Name -->
                         <div class="form-group">
 
                             <label for="name">
@@ -190,12 +256,14 @@
                                 type="text"
                                 id="name"
                                 name="name"
+                                autocomplete="name"
                                 required
                             >
 
                         </div>
 
 
+                        <!-- Email -->
                         <div class="form-group">
 
                             <label for="email">
@@ -206,12 +274,14 @@
                                 type="email"
                                 id="email"
                                 name="email"
+                                autocomplete="email"
                                 required
                             >
 
                         </div>
 
 
+                        <!-- Subject -->
                         <div class="form-group">
 
                             <label for="subject">
@@ -228,6 +298,7 @@
                         </div>
 
 
+                        <!-- Message -->
                         <div class="form-group">
 
                             <label for="message">
@@ -243,7 +314,14 @@
 
                         </div>
 
-                        <button type="submit">Send Message</button>
+
+                        <!-- Submit -->
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+                            Send Message
+                        </button>
 
                     </form>
 
@@ -254,7 +332,9 @@
         </section>
 
 
-        <!-- CTA -->
+        <!-- =========================
+             FINAL CTA
+        ========================== -->
         <section class="final-cta">
 
             <div class="cta-content">
@@ -279,14 +359,26 @@
     </main>
 
 
-    <!-- Footer -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
     <footer>
 
         <p>
-            &copy; 2026 CodeDot Technologies. All rights reserved.
+            &copy; 2026 CodeDot Technologies... All rights reserved.
         </p>
 
     </footer>
+
+
+    <!-- Scroll To Top -->
+<button
+    type="button"
+    class="scroll-top"
+    aria-label="Scroll to top"
+>
+    ↑
+</button>
 
 </body>
 
